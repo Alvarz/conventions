@@ -45,7 +45,7 @@ escalabilidad, legibilidad y mantenimiento de las aplicaciones.
 
 ```javascript
 /*
-* Compute the subtraction of two numbers usingsubtractsubstract javascript
+* Compute the subtraction of two numbers
 *
 * @param {number} a
 * @param {number} b
