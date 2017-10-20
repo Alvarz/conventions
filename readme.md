@@ -121,7 +121,7 @@ public class MvcApplication : System.Web.HttpApplication{
 }
 ```
 
-  ## Bases de datos (DB).
+  ## Bases de datos (DB). (falta base de datos no relacionales)
 
   * Cuando se usen bases de datos relacionales (Mysql, MsSql server, etc) se debe seguir ciertos parámetros para los nombres de tabla, estos deben estar basados en los nombres de modelos del paradigma MVC. El nombre debe ser un sustantivo en minúsculas estilo snake_case separados con guión bajo ( _ ). Ejemplo, al tener el modelo `User` la tabla debe llamarse `users` en plural, al contrario del modelo que debe estar singular. Por otro lado en una tabla que represente una relación entre dos modelos, el nombre debe estar basados en el diagrama [entidad relación](https://es.wikipedia.org/wiki/Modelo_entidad-relaci%C3%B3n) de la base de datos. Ejemplo `user_roles`, `role_permissions`
 
