@@ -26,9 +26,10 @@ escalabilidad, legibilidad y mantenimiento de las aplicaciones.
 
   - **Documentando Métodos**:
 
+
 ```C#
 /*
-* Compute the sum of two integers
+* Compute the sum of two integers in C# 
 *
 * @param {int} a
 * @param {int} b
@@ -45,7 +46,7 @@ escalabilidad, legibilidad y mantenimiento de las aplicaciones.
 
 ```javascript
 /*
-* Compute the subtraction of two numbers
+* Compute the subtraction of two numbers in javascript
 *
 * @param {number} a
 * @param {number} b
