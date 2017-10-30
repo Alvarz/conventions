@@ -95,31 +95,13 @@ protected $table = 'users';
 
 ```php
 Route::group(['prefix' => 'users'], function(){
-
+   
+  route::get('/', 'UserController@fetch');  //fetch all entries
+  route::get('/{user_id}', 'UserController@get'); // get one entry
   route::post('/create', 'UserController@store'); 
   route::put('/update/{user_id}', 'UserController@update'); 
 
 });
-```
-
-
-```C#
-public class MvcApplication : System.Web.HttpApplication{
-    public static void RegisterRoutes(RouteCollection routes){
-        routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-
-        routes.MapRoute(
-            "Default",                                              // Route name 
-            "{controllerPrefix}/{action}/{id}",                           // URL with parameters 
-            new { controller = "User", action = "create", id = "" }  // Parameter defaults
-        );
-
-    }
-
-    protected void Application_Start(){
-        RegisterRoutes(RouteTable.Routes);
-    }
-}
 ```
 
   ## Bases de datos (DB). (falta base de datos no relacionales)
@@ -178,7 +160,7 @@ CREATE TABLE clients (
 
   * **Estructuras de datos**
 
-  Si se necesita crear estructuras de datos en formato JSON, trabajo muy habitual en javascript, este debe seguir las convenciones que se usan para bases de datos siempre y cuando solo contengan datos y no funciones/métodos, en cuyo caso, debe seguir la conveción para la creación de clases.
+  Si se necesita crear estructuras de datos en formato JSON, trabajo muy habitual en javascript, este debe seguir las convenciones que se usan para bases de datos, siempre y cuando solo contengan datos y no funciones/métodos, en cuyo caso, debe seguir la conveción para la creación de clases.
 
   * Datos.
 
@@ -226,7 +208,7 @@ CREATE TABLE clients (
 
 * Control de versiones.
 
-  El sistema de control de versiones a usar es [git](https://git-scm.com/), he implementaremos una modificación del flujo de trabajo llamado [gitflow](http://aprendegit.com/que-es-git-flow/)
+  El sistema de control de versiones a usar será [git](https://git-scm.com/), implementando una modificación del flujo de trabajo llamado [gitflow](http://aprendegit.com/que-es-git-flow/)
 
    A continuación una breve explicación del flujo de trabajo con git.
 
@@ -242,7 +224,7 @@ CREATE TABLE clients (
 
   5- Si NO tenemos más de un commit saltar este paso. En caso contrario, al tener más de un commit por tarea generamos el squash con `git rebase -i HEAD~xx` (donde xx es la cantidad de commits que generamos y podemos ver con git log). Aparece una pantalla listando en cada renglon los commits involucrados, cada uno empieza con la palabra pick. Debemos dejar el primer pick como esta y luego cambiar todos los demas por squash. guardamos y salimos. Se abre el editor con todos los comentarios de los distintos commits, acá debemos dejar uno solo (Por lo general el primero, el original). Nuevamente guardamos y salimos. Ya esta el squash listo, si hacemos `git log` podemos ver que solo figuara un commit de la branch (luego del commit de la branch aparece la historia de commits de donde viene).
 
-  En caso de haber estado trabajando algunos días en la branch, deberemos actualizar la branch antes de hacer el push (para no generar conflictos).
+  En caso de haber estado trabajando algunos días en la branch, deberemos actualizar la misma antes de hacer el push (para no generar conflictos).
 
   6- Traemos los últimos cambios a develop, para eso hacemos el paso 1.
   
